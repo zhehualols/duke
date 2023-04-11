@@ -4,13 +4,22 @@ public class Task {
 
     public Task(String description) {
         this.description = description;
+        this.isDone = false;
     }
 
     public String getDescription() {
         return description;
     }
-    public void setDone(boolean done) {
-        isDone = done;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public void setDone() {
+        isDone = true;
+    }
+
+    public void setUnDone() {
+        isDone = false;
     }
 
     public boolean isDone() {
