@@ -22,6 +22,14 @@ public class Task {
         isDone = false;
     }
 
+    public String statusCheck(){
+        return (isDone ? "[X]" : "[ ]");
+    }
+    @Override
+    public String toString(){
+        return statusCheck() + " " + description;
+    }
+
     public boolean isDone() {
         return isDone;
     }
