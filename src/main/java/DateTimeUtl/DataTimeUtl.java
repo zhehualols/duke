@@ -7,6 +7,12 @@ public class DataTimeUtl {
     private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm";
 
 
+    /**
+     * This method converts valid date/datetime string into LocalDateTime format.
+     *
+     * @param dt A string representing the date.
+     * @return A datetime String in the format "yyyy-MM-dd HH:mm" if it's valid date input.
+     */
     public static LocalDateTime convertDT(String dt) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_TIME_FORMAT);
         LocalDateTime formattedDT = LocalDateTime.parse(dt, formatter);

@@ -26,14 +26,14 @@ public class TaskList {
         String[] body = nextLine.split(" \\| ");
         Task task = null;
         switch (body[0]) {
-            case "T":
+            case "T": // Todo task type
                 task = new Todo(body[2]);
                 if (body[1].equals("1")) {
                     task.setDone();
                 }
                 break;
             case "D":
-                task = new Deadline(body[2],
+                task = new Deadline(body[2], // body[2] = task description , body[3] = datatime in string
                         LocalDateTime.parse(body[3].replace("T"," "), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
                 if (body[1].equals("1")) {
                     task.setDone();

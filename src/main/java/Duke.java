@@ -80,9 +80,19 @@ public class Duke {
                 tasks.removeListTask(taskNum);
                 continue;
             }
+            if(line.toUpperCase().contains("FIND")){
+                String[] spiltInput = line.split(" ", 2);
+                System.out.println("Here are the matching tasks in your list:");
+                for (int i = 0 ; i < tasks.getListSize() ; i++) {
+                    if (tasks.getListTask(i).getDescription().contains(spiltInput[1])) {
+                        System.out.println(tasks.getListTask(i));
+                    }
+                }
+                continue;
+            }
             if(line.toUpperCase().contains("TODO")){
                 String[] spiltInput = line.split(" ", 2);
-                if(spiltInput.length < 2){
+                if(spiltInput.length < 2){ // No description of task
                     DukeException exception = new DukeException("☹ OOPS!!! The description of a " + spiltInput[0].trim() + " cannot be empty.");
                     exception.printException();
                     continue;

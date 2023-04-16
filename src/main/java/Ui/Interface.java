@@ -17,6 +17,12 @@ public class Interface {
         System.out.println(divider);
     }
 
+    /**
+     * This method prints added task and number of tasks left in the task list.
+     *
+     * @param Description   Description of task added.
+     * @param NumofTask     Number of task remaining in list.
+     */
     public void printAddedTask(String Description , int NumofTask){
         System.out.println(divider);
         System.out.println("\tGot it. I've added this task:");
